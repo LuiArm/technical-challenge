@@ -36,11 +36,10 @@ export default function Datatable(){
                             <td>${i.order_amount}</td>
                             <td>{i.order_date}</td>
                             <td>
-                            <ul>{i.order_items.map((sub)=>
-                                
-                                // <li>{sub.description}</li>
-                                <li>{sub.name}</li>
-                            )}</ul>
+                            <select>{i.order_items.map((sub)=>
+                                <option>({sub.id})-{sub.name}, 
+                                 ${sub.price}, {sub.quantity}, {sub.description}</option>
+                            )}</select>
                             </td>
                            
                             
