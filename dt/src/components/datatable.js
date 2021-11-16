@@ -17,7 +17,7 @@ export default function Datatable(){
                 <th>Address</th>
                 <th>Order amount</th>
                 <th>Order date</th>
-                <th>Order Items</th>
+                <th>Ordered Items</th>
             </tr>
         </thead>
         <tbody> 
@@ -28,22 +28,21 @@ export default function Datatable(){
                             <td>{i.customer_id}</td>
                             <td>{i.customer_first_name}</td>
                             <td>{i.customer_last_name}</td>
-                            <ul>
+                            <ul style={{listStyleType: "none" }}>
                                <li><td>{i.customer_address.street}</td></li> 
                                <li><td>{i.customer_address.city}, {i.customer_address.state}</td></li> 
-                               <li><td>{i.customer_address.zip}</td></li>
+                               <li><td>-{i.customer_address.zip}</td></li>
                             </ul>
                             <td>${i.order_amount}</td>
                             <td>{i.order_date}</td>
                             <td>
                             <select>{i.order_items.map((sub)=>
-                                <option>({sub.id})-{sub.name}, 
-                                 ${sub.price}, {sub.quantity}, {sub.description}</option>
+                                <option>{sub.name}({sub.id}), 
+                                 ${sub.price}, {sub.quantity}, 
+                                 {sub.description}</option>
                             )}</select>
-                            </td>
-                           
-                            
-                    </tr>
+                            </td>      
+                   </tr>
                 )
 
             }
