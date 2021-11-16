@@ -7,7 +7,7 @@ export default function Datatable(){
 
     const columns = Data[0] && Object.keys(Data[0])
     return (
-    <table cellPadding={0} cellSpacing={0}>
+    <table cellPadding={15} cellSpacing={0}>
         <thead>
             <tr>
                 <th>Order Id</th>
@@ -30,8 +30,8 @@ export default function Datatable(){
                             <td>{i.customer_last_name}</td>
                             <ul style={{listStyleType: "none" }}>
                                <li><td>{i.customer_address.street}</td></li> 
-                               <li><td>{i.customer_address.city}, {i.customer_address.state}</td></li> 
-                               <li><td>-{i.customer_address.zip}</td></li>
+                               <li><td>{i.customer_address.city}, {i.customer_address.state}-{i.customer_address.zip}</td></li> 
+                              
                             </ul>
                             <td>${i.order_amount}</td>
                             <td>{i.order_date}</td>
