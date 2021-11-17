@@ -1,11 +1,12 @@
 import React from 'react';
-import Data from './data.json'
+// import Data from './data.json'
 
 
-export default function Datatable(){
- 
+const Datatable = ({ posts }) => {
+ console.log(posts)
 
-    const columns = Data[0] && Object.keys(Data[0])
+
+    const columns = posts[0] && Object.keys(posts[0])
     return (
     <table cellPadding={15} cellSpacing={0}>
         <thead>
@@ -22,7 +23,7 @@ export default function Datatable(){
         </thead>
         <tbody> 
             {
-                Data.map((i) =>
+                posts.map((i) =>
                     <tr key={i}> 
                         <th scope="row">{i.order_id}</th>
                             <td>{i.customer_id}</td>
@@ -53,3 +54,5 @@ export default function Datatable(){
     </table>
     )
 }
+
+export default Datatable;
