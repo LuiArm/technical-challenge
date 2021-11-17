@@ -1,5 +1,5 @@
 import React from 'react';
-// import Data from './data.json'
+import './table.css'
 
 
 const Datatable = ({ posts }) => {
@@ -8,7 +8,7 @@ const Datatable = ({ posts }) => {
 
     const columns = posts[0] && Object.keys(posts[0])
     return (
-    <table cellPadding={15} cellSpacing={0}>
+    <table cellPadding={8} cellSpacing={0}>
         <thead>
             <tr>
                 <th>Order Id</th>
